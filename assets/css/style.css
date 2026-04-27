@@ -283,6 +283,7 @@ section { padding: 5rem 0; }
 .service-card:hover {
   border-color: var(--teal);
   transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(45,212,191,.08);
 }
 
 .service-icon {
@@ -403,6 +404,7 @@ section { padding: 5rem 0; }
 .portfolio-card:hover {
   border-color: var(--teal);
   transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(45,212,191,.08);
 }
 
 .portfolio-card-img {
@@ -582,3 +584,38 @@ footer {
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
 }
+
+/* Form feedback messages */
+.form-msg {
+  margin-top: .75rem;
+  font-size: .875rem;
+  min-height: 1.2em;
+}
+.form-msg.success { color: #2dd4bf; }
+.form-msg.error   { color: #f87171; }
+
+/* Active nav link */
+.nav-links a.active { color: #f0f6fc; }
+
+/* Scroll reveal — elements start invisible, JS adds .visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+/* Stagger children inside a reveal parent */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: .05s; }
+.reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: .15s; }
+.reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: .25s; }
+.reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: .35s; }
+.reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: .42s; }
+.reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: .48s; }

@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Zavala Tech Consulting — IT strategy, infrastructure, and workplace technology consulting for organizations in Colorado and beyond.">
+  <meta property="og:title" content="Zavala Tech Consulting | IT Strategy & Infrastructure">
+  <meta property="og:description" content="Practical IT strategy, infrastructure consulting, and workplace technology guidance for organizations in Colorado and beyond.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zavalatechconsulting.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zavala Tech Consulting">
+  <meta name="twitter:description" content="Practical IT strategy and infrastructure consulting. Colorado-based, remote-ready.">
+  <link rel="canonical" href="https://zavalatechconsulting.com/">
   <title>Zavala Tech Consulting | IT Strategy & Infrastructure</title>
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Favicon placeholder — swap with your own -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -27,6 +34,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Work</a></li>
+        <li><a href="https://zavalalabs.github.io" target="_blank" rel="noopener">Blog</a></li>
         <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
       </ul>
     </div>
@@ -58,8 +66,8 @@
         <div class="stat-label">Years in IT</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">SMB</div>
-        <div class="stat-label">to Enterprise</div>
+        <div class="stat-num">1,200+</div>
+        <div class="stat-label">Org Size Experience</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">CO</div>
@@ -162,21 +170,13 @@
           <h2 class="section-heading">Practical experience.<br>Direct advice.</h2>
 
           <p>
-            I'm Chris Zavala — an IT professional based in Colorado with over a
-            decade of experience across infrastructure, workplace technology, and
-            organizational IT strategy. I've worked across organizations ranging
-            from lean SMBs to 1,000+ person enterprises, which means I understand
-            both the budget constraints and the political realities.
+            I'm Chris Zavala — an IT professional based in Colorado with over a decade of hands-on experience across infrastructure, workplace technology, and organizational IT strategy. I've worked inside organizations ranging from lean 10-person SMBs to enterprise environments with 1,200+ employees, which means I understand both the budget constraints and the political realities.
           </p>
           <p>
-            I write about technology, hybrid work, and IT at
-            <a href="https://zavalalabs.github.io" target="_blank" rel="noopener">zavalalabs.github.io</a>.
-            What I publish there is the same thinking I bring to client engagements —
-            no fluff, no buzzwords, no solutions looking for problems.
+            My background is practical, not theoretical. I've built and maintained the infrastructure, argued for the tooling budget, and managed the conversation with leadership when the technology isn't working the way anyone promised it would. I write about technology and workplace dynamics at <a href="https://zavalalabs.github.io" target="_blank" rel="noopener">zavalalabs.github.io</a> — the same thinking I bring to client engagements.
           </p>
           <p>
-            If you need someone who will give you a straight answer and stick
-            around to help implement it, let's talk.
+            I take a limited number of engagements at a time so I can give each one real attention. If you need someone who will give you a straight answer and stick around to help implement it, let's talk.
           </p>
 
           <div class="about-tags">
@@ -229,9 +229,7 @@
             <span class="portfolio-tag">Infrastructure</span>
             <h3>Homelab-to-Production Network Redesign</h3>
             <p>
-              Migrated a small business from consumer-grade networking to a
-              Proxmox-backed virtualization stack with OPNsense edge security,
-              VLAN segmentation, and documented disaster recovery procedures.
+              Designed and deployed a full infrastructure overhaul for a small business: Proxmox hypervisor replacing aging Windows Server hardware, OPNsense at the edge with VLAN segmentation for staff, IoT, and guest traffic, plus Wasabi cloud backup replacing an unreliable tape rotation. Delivered runbooks the client could actually use without calling for help.
             </p>
           </div>
         </div>
@@ -242,9 +240,7 @@
             <span class="portfolio-tag">Workplace Technology</span>
             <h3>Hybrid Work Policy &amp; Tooling Audit</h3>
             <p>
-              Evaluated a mid-sized organization's hybrid work stack, identified
-              redundant tooling and coverage gaps, and delivered a consolidation
-              roadmap with projected savings and implementation sequencing.
+              Conducted a full collaboration stack audit for a mid-sized hybrid organization: identified three overlapping video conferencing contracts, two redundant file storage platforms, and a shadow IT Slack workspace no one in IT knew about. Delivered a consolidation roadmap with a 14-month payback period and change management sequencing to minimize disruption.
             </p>
           </div>
         </div>
@@ -255,9 +251,7 @@
             <span class="portfolio-tag">EV &amp; Fleet</span>
             <h3>EV Fleet Transition Planning</h3>
             <p>
-              Guided a Colorado organization through EV fleet evaluation —
-              vehicle selection criteria, charging infrastructure requirements,
-              grid impact assessment, and phased rollout planning.
+              Supported a Colorado-based fleet operator evaluating a transition from ICE to EV vehicles: built the evaluation matrix for vehicle selection, modeled charging infrastructure requirements across two facilities, assessed grid capacity with the utility, and produced a phased rollout plan that qualified for Colorado EVIE incentive funding.
             </p>
           </div>
         </div>
@@ -290,7 +284,7 @@
             </div>
             <div class="contact-method">
               <div class="contact-method-icon">⏱️</div>
-              <span>Response within one business day</span>
+              <span>Typically respond within 24 hours, Mon–Fri</span>
             </div>
             <div class="contact-method">
               <div class="contact-method-icon">📝</div>
@@ -380,17 +374,6 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="assets/js/main.js" defer></script>
 
-  <style>
-    /* inline — small form feedback styles */
-    .form-msg {
-      margin-top: .75rem;
-      font-size: .875rem;
-      min-height: 1.2em;
-    }
-    .form-msg.success { color: #2dd4bf; }
-    .form-msg.error   { color: #f87171; }
-    .nav-links a.active { color: #f0f6fc; }
-  </style>
 
 </body>
 </html>

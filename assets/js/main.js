@@ -70,4 +70,21 @@
     });
   }
 
+  /* ── Scroll reveal via IntersectionObserver ── */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    /* fallback: just show everything */
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
 })();
