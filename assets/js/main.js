@@ -40,36 +40,6 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ── Formspree submission feedback ── */
-  var form = document.getElementById('contactForm');
-  var formMsg = document.getElementById('formMsg');
-
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var data = new FormData(form);
-
-      fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(function (res) {
-        if (res.ok) {
-          formMsg.textContent = "Got it — I'll be in touch within one business day.";
-          formMsg.className = 'form-msg success';
-          form.reset();
-        } else {
-          return res.json().then(function (d) { throw d; });
-        }
-      })
-      .catch(function () {
-        formMsg.textContent = 'Something went wrong. Please email me directly.';
-        formMsg.className = 'form-msg error';
-      });
-    });
-  }
-
   /* ── Scroll reveal via IntersectionObserver ── */
   var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
   if (revealEls.length && 'IntersectionObserver' in window) {

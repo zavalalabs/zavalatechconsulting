@@ -597,6 +597,58 @@ footer {
 /* Active nav link */
 .nav-links a.active { color: #f0f6fc; }
 
+/* ── Formspree SDK styles ── */
+
+/* Success banner */
+.fs-success {
+  display: none; /* SDK shows it after submit */
+  background: rgba(45,212,191,.1);
+  border: 1px solid rgba(45,212,191,.35);
+  color: var(--teal);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: .95rem;
+  font-weight: 500;
+}
+/* Formspree removes [hidden] when succeeded */
+.fs-success:not([hidden]) { display: block; }
+
+/* Form-level error */
+.fs-form-error {
+  display: none;
+  background: rgba(248,113,113,.08);
+  border: 1px solid rgba(248,113,113,.3);
+  color: #f87171;
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: .875rem;
+}
+.fs-form-error:not(:empty) { display: block; }
+
+/* Field-level error messages */
+.fs-field-error {
+  display: block;
+  color: #f87171;
+  font-size: .78rem;
+  margin-top: .3rem;
+  min-height: 1em;
+}
+
+/* Red border on invalid fields (set by SDK via aria-invalid) */
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #f87171;
+}
+
+/* Disabled state on submit button during submission */
+button[data-fs-submit-btn]:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
 /* Scroll reveal — elements start invisible, JS adds .visible */
 .reveal {
   opacity: 0;
