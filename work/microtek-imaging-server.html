@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Case study: Large-scale imaging server implementation for Microtek using PXE boot and the Macrium Reflect Deployment Toolkit — 2,000+ PC deployments per week.">
+  <meta name="description" content="Case study: How replacing a Norton Ghost workstation with a 1U server, 10G networking, and Macrium Reflect gave Microtek 2,000+ PC deployments per week for Colorado schools.">
   <meta property="og:title" content="Imaging Server Implementation — Microtek | Zavala Tech Consulting">
-  <meta property="og:description" content="How we implemented a PXE-based imaging pipeline with Macrium Reflect for Microtek, enabling 2,000+ consistent PC deployments per week.">
+  <meta property="og:description" content="Replacing Norton Ghost on a repurposed workstation with a purpose-built 1U imaging server and 10G network infrastructure — saturating endpoint mSATA drives via the network at scale.">
   <meta property="og:type" content="article">
   <link rel="canonical" href="https://zavalatechconsulting.com/work/microtek-imaging-server.html">
   <title>Imaging Server Implementation — Microtek | Zavala Tech Consulting</title>
@@ -65,7 +65,7 @@
           </div>
           <div class="cs-meta-item">
             <div class="cs-meta-label">Stack</div>
-            <div class="cs-meta-value">PXE · Macrium Reflect Deployment Toolkit · WinPE</div>
+            <div class="cs-meta-value">PXE · Macrium Reflect · WinPE · 10GbE · HP &amp; Lenovo</div>
           </div>
         </div>
       </div>
@@ -78,18 +78,18 @@
         <div class="cs-section reveal">
           <h2>The Situation</h2>
           <p>
-            Microtek is a Colorado-based education technology firm that has been building and
-            deploying custom PC images for schools, districts, and organizations for more than
-            two decades. Their work covers everything from initial image creation to
-            large-scale rollouts — custom configurations, application packages, and security
-            baselines tailored to each client's environment.
+            Microtek is a Colorado-based education technology firm that has built and deployed
+            custom PC images for schools, districts, and organizations for over 20 years. Their
+            operation runs as a purpose-built assembly environment — institutions order devices,
+            Microtek images them to spec, and ships them ready to deploy. Volume is the
+            business model, and the imaging pipeline is the throughput constraint.
           </p>
           <p>
-            As client demand grew and PC deployments got more complex, their existing imaging
-            infrastructure couldn't keep up. The process relied heavily on technician time
-            per machine and lacked the centralized control needed to scale consistently across
-            large orders. They needed an imaging server that could handle high-volume
-            deployments reliably — and do it without proportionally growing their labor costs.
+            At the time of the engagement, their imaging setup was a repurposed workstation
+            running Norton Ghost — a legacy choice that had served them for years but was
+            increasingly the bottleneck for everything downstream. The workstation's local
+            spinning storage was the rate limiter: slow reads meant slow image delivery, which
+            meant technicians were waiting on hardware instead of moving through the line.
           </p>
           <p>
             This engagement was delivered through Information Systems Integrators (ISI), where
@@ -100,69 +100,74 @@
         <div class="cs-section reveal">
           <h2>The Challenge</h2>
           <ul class="cs-list" role="list">
-            <li>Existing imaging process was heavily manual — each machine required direct technician interaction, creating a hard ceiling on throughput</li>
-            <li>No centralized imaging server meant images were managed inconsistently across multiple drives and machines</li>
-            <li>Deploying image updates required touching every machine individually — no network-push capability</li>
-            <li>Growing client order volume was outpacing the capacity of the existing workflow</li>
-            <li>Inconsistent deployment outcomes created QA rework on a percentage of machines at each rollout</li>
-            <li>No documented deployment standard — institutional knowledge lived with individual technicians</li>
+            <li>The imaging "server" was a repurposed workstation — not built for sustained parallel read workloads at production volume</li>
+            <li>Norton Ghost's legacy architecture wasn't designed for modern PXE-based network deployment at scale</li>
+            <li>Slow local spinning storage meant image delivery was the bottleneck — technicians waited on the machine instead of the machine waiting on technicians</li>
+            <li>No true server-grade network infrastructure: the workstation's single standard NIC couldn't feed multiple simultaneous deployments without degrading each one</li>
+            <li>Target endpoints — HP and Lenovo laptops selected by educational institutions — shipped with mSATA drives capable of write speeds the old setup couldn't come close to saturating</li>
+            <li>Scaling throughput meant adding technicians, not improving infrastructure — a cost structure that didn't fit the business</li>
           </ul>
         </div>
 
         <div class="cs-section reveal">
           <h2>The Approach</h2>
           <p>
-            The core of the solution was a PXE-based imaging pipeline: machines boot from
-            the network, connect to the imaging server, and receive a fully configured image
-            without a technician needing to touch individual media. The Macrium Reflect
-            Deployment Toolkit provided the image management, deployment orchestration, and
-            the WinPE-based boot environment that made it all work at scale.
+            The engineering goal was to make the imaging server fast enough that the endpoint
+            drive became the limiting factor — not the network, not the server storage, and
+            definitely not the server's ability to serve multiple machines simultaneously.
+            If we could saturate the mSATA write speed on a laptop over a 1G connection, the
+            deployment time would be as short as physics allowed. Everything else was about
+            removing obstacles between the image and the drive.
           </p>
           <ul class="cs-list" role="list">
             <li>
-              <strong style="color:var(--white)">Infrastructure assessment:</strong> Documented
-              the existing imaging workflow end-to-end — where technician time was spent,
-              where errors were introduced, and what the hard throughput limits were with
-              the current process. This drove the server sizing and network configuration
-              decisions.
+              <strong style="color:var(--white)">Server platform:</strong> Replaced the
+              workstation with a purpose-built 1U rack server with a storage subsystem selected
+              specifically for high-throughput parallel reads. The server needed to serve
+              multiple simultaneous imaging sessions without any single session degrading —
+              which meant the local storage had to handle intensive concurrent read I/O without
+              becoming the bottleneck when the line was running at full capacity.
             </li>
             <li>
-              <strong style="color:var(--white)">Imaging server build:</strong> Configured the
-              dedicated imaging server with appropriate storage for image libraries,
-              redundancy for the deployment environment, and network connectivity to support
-              simultaneous multi-machine deployments without bandwidth becoming the bottleneck.
+              <strong style="color:var(--white)">10G network uplinks:</strong> The server
+              connected to two network switches via 10GbE. This gave the imaging server
+              10x the uplink bandwidth of any individual endpoint — meaning it could feed
+              ten simultaneous 1G imaging sessions at full line rate before the server's
+              own network became a constraint. In practice, the deployment floor ran well
+              within that headroom.
             </li>
             <li>
-              <strong style="color:var(--white)">PXE boot environment:</strong> Configured
-              DHCP options and TFTP to serve the WinPE boot environment to client machines
-              on the network. Any compatible machine on the deployment VLAN could network-boot
-              directly into the imaging environment without local media.
+              <strong style="color:var(--white)">1G to endpoints:</strong> Each HP and Lenovo
+              laptop on the assembly stations connected to the switches over standard 1GbE.
+              The critical finding during testing: the mSATA drives in the target laptops
+              could be saturated via the 1G connection — meaning the image was arriving
+              faster than the drive could write it, and the drive write speed was the actual
+              ceiling. This is what you want. The network was no longer the slowest thing
+              in the chain.
             </li>
             <li>
-              <strong style="color:var(--white)">Macrium Reflect Deployment Toolkit setup:</strong>
-              Installed and configured the Deployment Toolkit on the imaging server. Built out
-              the deployment profiles — mapping image versions to hardware targets, configuring
-              post-image tasks (driver injection, hostname assignment, domain join sequencing),
-              and setting up the deployment menu that technicians interact with during a rollout.
+              <strong style="color:var(--white)">PXE boot and Macrium Reflect Deployment Toolkit:</strong>
+              Configured DHCP and TFTP to serve the WinPE boot environment over the network.
+              Machines booted directly into the Macrium Reflect imaging environment with no
+              local media involved. The Deployment Toolkit managed the golden image library,
+              hardware-specific deployment profiles for HP and Lenovo target SKUs, and the
+              technician-facing menu that kept the workflow simple on the floor.
             </li>
             <li>
-              <strong style="color:var(--white)">Image library and management:</strong> Worked
-              with Microtek's team to capture clean reference images for their current client
-              base. Established a versioning convention so image updates could be tracked,
-              tested, and promoted to production without disrupting active deployment profiles.
+              <strong style="color:var(--white)">Assembly-line workflow design:</strong>
+              The real unlock wasn't just speed — it was what speed enabled. With deployment
+              time short enough, the workflow became a true assembly line: a technician
+              connects a laptop, initiates the PXE boot, selects the correct golden image
+              from the menu, and moves to the next station. By the time they've worked down
+              the line, the first machine is done and ready for QA and boxing. Technician
+              time and machine time fully overlapped. No waiting.
             </li>
             <li>
-              <strong style="color:var(--white)">Testing and validation:</strong> Ran
-              deployment tests across the hardware SKUs in Microtek's active client base —
-              verifying image integrity, driver compatibility, and post-image state on each
-              target. Identified and resolved a driver injection issue on one hardware line
-              before the system went live.
-            </li>
-            <li>
-              <strong style="color:var(--white)">Documentation and handover:</strong>
-              Documented the full deployment workflow, image versioning process, and
-              troubleshooting procedures. Walked Microtek's technical staff through the
-              system so they could manage it independently after handover.
+              <strong style="color:var(--white)">Golden image management:</strong> Built out
+              separate deployment profiles for the HP and Lenovo laptop lines in active use
+              across Microtek's institutional clients. Established a process for capturing,
+              versioning, and testing updated images before promoting them to the production
+              deployment menu — so a bad image couldn't silently ship to a client order.
             </li>
           </ul>
         </div>
@@ -177,28 +182,30 @@
         <div class="cs-outcomes-grid">
           <div class="cs-outcome-card">
             <div class="cs-outcome-num">2,000+</div>
-            <div class="cs-outcome-label">PCs deployable per week with the new imaging server — consistently, at scale</div>
+            <div class="cs-outcome-label">Custom PC images deployed per week — consistently, to HP and Lenovo laptops for Colorado institutions</div>
           </div>
           <div class="cs-outcome-card">
-            <div class="cs-outcome-num">Network</div>
-            <div class="cs-outcome-label">PXE boot — no local media required; machines deploy from the network automatically</div>
+            <div class="cs-outcome-num">10GbE</div>
+            <div class="cs-outcome-label">Server uplink to two switches — enough headroom to run every assembly station at full 1G line rate simultaneously</div>
           </div>
           <div class="cs-outcome-card">
-            <div class="cs-outcome-num">Centralized</div>
-            <div class="cs-outcome-label">Single image library with version control — updates pushed from one location to all deployment profiles</div>
+            <div class="cs-outcome-num">mSATA</div>
+            <div class="cs-outcome-label">Endpoint drive write speed became the bottleneck — meaning the network and server were no longer constraints</div>
           </div>
           <div class="cs-outcome-card">
-            <div class="cs-outcome-num">Scalable</div>
-            <div class="cs-outcome-label">Architecture built to scale further — additional imaging capacity can be added without redesign</div>
+            <div class="cs-outcome-num">Assembly</div>
+            <div class="cs-outcome-label">Technician time and imaging time fully overlapped — first unit ready for boxing by the time the line is started</div>
           </div>
         </div>
         <div class="cs-section" style="margin-top:2.5rem; margin-bottom:0;">
           <p>
-            The shift from manual, per-machine imaging to a centralized PXE deployment pipeline
-            fundamentally changed Microtek's capacity ceiling. Before, throughput was a direct
-            function of technician headcount. After, technicians manage the process rather than
-            executing it machine by machine — freeing them to handle quality checks, client
-            communication, and the edge cases that actually require human judgment.
+            The shift from a Norton Ghost workstation with spinning storage to a purpose-built
+            1U imaging server with a 10G backbone changed the fundamental dynamic of the
+            operation. Previously, the infrastructure made technicians wait. After, the
+            infrastructure ran faster than the technicians could move through the line — which
+            is exactly what a high-volume assembly environment needs. The bottleneck moved from
+            the server to the endpoint drive, and from the drive to the technician's pace, which
+            is the right order.
           </p>
           <p>
             Microtek continues to operate the system and has expanded its client base since
