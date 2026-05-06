@@ -7,6 +7,27 @@
 /* ── Reset & base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Skip link (ADA/WCAG 2.1 SC 2.4.1) ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--teal);
+  color: var(--navy);
+  padding: .5rem 1.25rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-weight: 700;
+  font-size: .9rem;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top .15s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+
 :root {
   --navy:       #0d1117;
   --navy-mid:   #161b22;
@@ -37,6 +58,15 @@ body {
 
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* ── Focus indicators (WCAG 2.4.7 — visible focus) ── */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* Remove default focus ring only when focus-visible is supported */
+:focus:not(:focus-visible) { outline: none; }
 
 img { max-width: 100%; display: block; }
 
@@ -510,12 +540,20 @@ section { padding: 5rem 0; }
   padding: .65rem .9rem;
   font-family: inherit;
   transition: border-color .2s;
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--teal);
+}
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  border-color: var(--teal);
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
 }
 .form-group textarea { min-height: 120px; resize: vertical; }
 
@@ -671,3 +709,22 @@ button[data-fs-submit-btn]:disabled {
 .reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: .35s; }
 .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: .42s; }
 .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: .48s; }
+
+/* ── Reduced motion (WCAG 2.3.3 / prefers-reduced-motion) ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  /* Immediately show reveal elements — no fade/slide */
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

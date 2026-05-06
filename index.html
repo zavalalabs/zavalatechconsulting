@@ -19,9 +19,13 @@
 </head>
 <body>
 
+  <!-- Skip link — hidden until focused (ADA/WCAG 2.1 SC 2.4.1) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ════════════════════════════════════════
        NAV
   ════════════════════════════════════════ -->
+  <header>
   <nav aria-label="Main navigation">
     <div class="nav-inner">
       <a href="#hero" class="nav-brand">Zavala <span>Tech</span></a>
@@ -39,7 +43,9 @@
       </ul>
     </div>
   </nav>
+  </header>
 
+  <main id="main-content">
 
   <!-- ════════════════════════════════════════
        HERO
@@ -94,7 +100,7 @@
       <div class="services-grid">
 
         <div class="service-card">
-          <span class="service-icon">🏗️</span>
+          <span class="service-icon" aria-hidden="true">🏗️</span>
           <h3>Infrastructure &amp; Networking</h3>
           <p>
             Network design, on-premise and hybrid cloud infrastructure,
@@ -104,7 +110,7 @@
         </div>
 
         <div class="service-card">
-          <span class="service-icon">🏢</span>
+          <span class="service-icon" aria-hidden="true">🏢</span>
           <h3>Workplace Technology Strategy</h3>
           <p>
             Hybrid work tooling, collaboration platform evaluation, IT policy
@@ -114,7 +120,7 @@
         </div>
 
         <div class="service-card">
-          <span class="service-icon">📋</span>
+          <span class="service-icon" aria-hidden="true">📋</span>
           <h3>IT Assessment &amp; Roadmapping</h3>
           <p>
             A structured look at where your IT environment is today, where it
@@ -125,7 +131,7 @@
 
 
         <div class="service-card">
-          <span class="service-icon">⚡</span>
+          <span class="service-icon" aria-hidden="true">⚡</span>
           <h3>Fractional IT Leadership</h3>
           <p>
             Need a technical voice in the room without the full-time hire?
@@ -135,7 +141,7 @@
         </div>
 
         <div class="service-card">
-          <span class="service-icon">🚗</span>
+          <span class="service-icon" aria-hidden="true">🚗</span>
           <h3>EV &amp; Fleet Technology</h3>
           <p>
             Charging infrastructure planning, EV fleet integration, and
@@ -215,7 +221,7 @@
       <div class="portfolio-grid">
 
         <div class="portfolio-card">
-          <div class="portfolio-card-img">🖧</div>
+          <div class="portfolio-card-img" aria-hidden="true">🖧</div>
           <div class="portfolio-card-body">
             <span class="portfolio-tag">Infrastructure</span>
             <h3>Homelab-to-Production Network Redesign</h3>
@@ -226,7 +232,7 @@
         </div>
 
         <div class="portfolio-card">
-          <div class="portfolio-card-img">🏢</div>
+          <div class="portfolio-card-img" aria-hidden="true">🏢</div>
           <div class="portfolio-card-body">
             <span class="portfolio-tag">Workplace Technology</span>
             <h3>Hybrid Work Policy &amp; Tooling Audit</h3>
@@ -237,7 +243,7 @@
         </div>
 
         <div class="portfolio-card">
-          <div class="portfolio-card-img">⚡</div>
+          <div class="portfolio-card-img" aria-hidden="true">⚡</div>
           <div class="portfolio-card-body">
             <span class="portfolio-tag">EV &amp; Fleet</span>
             <h3>EV Fleet Transition Planning</h3>
@@ -270,15 +276,15 @@
 
           <div class="contact-methods">
             <div class="contact-method">
-              <div class="contact-method-icon">📍</div>
+              <div class="contact-method-icon" aria-hidden="true">📍</div>
               <span>Colorado — available remote nationwide</span>
             </div>
             <div class="contact-method">
-              <div class="contact-method-icon">⏱️</div>
+              <div class="contact-method-icon" aria-hidden="true">⏱️</div>
               <span>Typically respond within 24 hours, Mon–Fri</span>
             </div>
             <div class="contact-method">
-              <div class="contact-method-icon">📝</div>
+              <div class="contact-method-icon" aria-hidden="true">📝</div>
               <span>
                 Read my thinking at
                 <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">blog.chriszavala.com</a>
@@ -304,15 +310,17 @@
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name"
                        placeholder="Jane Smith" required
+                       aria-required="true" aria-describedby="name-error"
                        data-fs-field>
-                <span data-fs-error="name" class="fs-field-error"></span>
+                <span id="name-error" data-fs-error="name" class="fs-field-error" aria-live="polite"></span>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email"
                        placeholder="jane@company.com" required
+                       aria-required="true" aria-describedby="email-error"
                        data-fs-field>
-                <span data-fs-error="email" class="fs-field-error"></span>
+                <span id="email-error" data-fs-error="email" class="fs-field-error" aria-live="polite"></span>
               </div>
             </div>
 
@@ -325,7 +333,7 @@
 
             <div class="form-group">
               <label for="service">What are you looking for help with?</label>
-              <select id="service" name="service" data-fs-field>
+              <select id="service" name="service" aria-describedby="service-error" data-fs-field>
                 <option value="">— Select a topic —</option>
                 <option>Infrastructure &amp; Networking</option>
                 <option>Workplace Technology Strategy</option>
@@ -335,15 +343,16 @@
                 <option>EV &amp; Fleet Technology</option>
                 <option>Something else</option>
               </select>
-              <span data-fs-error="service" class="fs-field-error"></span>
+              <span id="service-error" data-fs-error="service" class="fs-field-error" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
               <label for="message">Tell me what you're working on</label>
               <textarea id="message" name="message"
                 placeholder="A few sentences is plenty — what's the situation and what outcome are you trying to reach?"
-                required data-fs-field></textarea>
-              <span data-fs-error="message" class="fs-field-error"></span>
+                required aria-required="true" aria-describedby="message-error"
+                data-fs-field></textarea>
+              <span id="message-error" data-fs-error="message" class="fs-field-error" aria-live="polite"></span>
             </div>
 
             <button type="submit" class="btn btn-primary form-submit"
@@ -356,6 +365,8 @@
     </div>
   </section>
 
+
+  </main><!-- /#main-content -->
 
   <!-- ════════════════════════════════════════
        FOOTER

@@ -31,9 +31,15 @@
     sections.forEach(function (section) {
       if (scrollY >= section.offsetTop &&
           scrollY < section.offsetTop + section.offsetHeight) {
-        navItems.forEach(function (a) { a.classList.remove('active'); });
+        navItems.forEach(function (a) {
+          a.classList.remove('active');
+          a.removeAttribute('aria-current');
+        });
         var active = document.querySelector('.nav-links a[href="#' + section.id + '"]');
-        if (active) active.classList.add('active');
+        if (active) {
+          active.classList.add('active');
+          active.setAttribute('aria-current', 'location');
+        }
       }
     });
   }
@@ -42,7 +48,12 @@
 
   /* ── Scroll reveal via IntersectionObserver ── */
   var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
-  if (revealEls.length && 'IntersectionObserver' in window) {
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    /* Skip animations for users who prefer reduced motion */
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  } else if (revealEls.length && 'IntersectionObserver' in window) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
