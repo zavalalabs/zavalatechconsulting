@@ -724,26 +724,28 @@ button[data-fs-submit-btn]:disabled {
 .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: .42s; }
 .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: .48s; }
 
-/* ── Case Study Pages ── */
-.cs-breadcrumb {
-  padding: calc(var(--nav-h) + 2rem) 0 0;
-  margin-bottom: 2rem;
+/* ── Anchor scroll offset — prevent fixed nav from covering section tops ── */
+section[id] {
+  scroll-margin-top: var(--nav-h);
 }
-.cs-breadcrumb a {
+
+/* ── Case Study Pages ── */
+
+/* .cs-breadcrumb IS the <a> element — style it directly */
+.cs-breadcrumb {
+  display: block;
   font-size: .85rem;
   color: var(--muted);
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
+  margin-bottom: 1.5rem;
   transition: color .2s;
 }
-.cs-breadcrumb a:hover { color: var(--teal); text-decoration: none; }
+.cs-breadcrumb:hover { color: var(--teal); text-decoration: none; }
 
 .cs-hero {
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(45,212,191,.06) 0%, transparent 70%),
     var(--navy);
-  padding: calc(var(--nav-h) + 3rem) 0 4rem;
+  padding: calc(var(--nav-h) + 2.5rem) 0 4rem;
   border-bottom: 1px solid var(--border);
 }
 .cs-hero .container { max-width: 800px; }
