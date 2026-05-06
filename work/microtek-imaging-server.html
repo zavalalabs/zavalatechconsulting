@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: Large-scale imaging server implementation for Microtek using PXE boot and the Macrium Reflect Deployment Toolkit — 2,000+ PC deployments per week.">
+  <meta property="og:title" content="Imaging Server Implementation — Microtek | Zavala Tech Consulting">
+  <meta property="og:description" content="How we implemented a PXE-based imaging pipeline with Macrium Reflect for Microtek, enabling 2,000+ consistent PC deployments per week.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://zavalatechconsulting.com/work/microtek-imaging-server.html">
+  <title>Imaging Server Implementation — Microtek | Zavala Tech Consulting</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Zavala <span>Tech</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#portfolio">Work</a></li>
+        <li><a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── Hero ── -->
+    <section class="cs-hero">
+      <div class="container">
+        <a href="/#portfolio" class="cs-breadcrumb" aria-label="Back to Work">← Back to Work</a>
+        <div class="cs-hero-tag">Education Technology</div>
+        <h1>Large-Scale Imaging Server<br>Implementation — Microtek</h1>
+        <p class="cs-hero-summary">
+          Microtek has deployed custom PC images for Colorado schools and organizations
+          for over 20 years. When their imaging workflow hit a scaling wall, we implemented
+          a new PXE-based imaging server using the Macrium Reflect Deployment Toolkit —
+          bringing their capacity to over 2,000 consistent deployments per week.
+        </p>
+        <div class="cs-meta">
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Client</div>
+            <div class="cs-meta-value">Microtek (microtek-co.com)</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sector</div>
+            <div class="cs-meta-value">Education Technology</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Delivered via</div>
+            <div class="cs-meta-value">Information Systems Integrators (ISI)</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Stack</div>
+            <div class="cs-meta-value">PXE · Macrium Reflect Deployment Toolkit · WinPE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Body ── -->
+    <section class="cs-body">
+      <div class="container">
+
+        <div class="cs-section reveal">
+          <h2>The Situation</h2>
+          <p>
+            Microtek is a Colorado-based education technology firm that has been building and
+            deploying custom PC images for schools, districts, and organizations for more than
+            two decades. Their work covers everything from initial image creation to
+            large-scale rollouts — custom configurations, application packages, and security
+            baselines tailored to each client's environment.
+          </p>
+          <p>
+            As client demand grew and PC deployments got more complex, their existing imaging
+            infrastructure couldn't keep up. The process relied heavily on technician time
+            per machine and lacked the centralized control needed to scale consistently across
+            large orders. They needed an imaging server that could handle high-volume
+            deployments reliably — and do it without proportionally growing their labor costs.
+          </p>
+          <p>
+            This engagement was delivered through Information Systems Integrators (ISI), where
+            I was responsible for the technical implementation from design through handover.
+          </p>
+        </div>
+
+        <div class="cs-section reveal">
+          <h2>The Challenge</h2>
+          <ul class="cs-list" role="list">
+            <li>Existing imaging process was heavily manual — each machine required direct technician interaction, creating a hard ceiling on throughput</li>
+            <li>No centralized imaging server meant images were managed inconsistently across multiple drives and machines</li>
+            <li>Deploying image updates required touching every machine individually — no network-push capability</li>
+            <li>Growing client order volume was outpacing the capacity of the existing workflow</li>
+            <li>Inconsistent deployment outcomes created QA rework on a percentage of machines at each rollout</li>
+            <li>No documented deployment standard — institutional knowledge lived with individual technicians</li>
+          </ul>
+        </div>
+
+        <div class="cs-section reveal">
+          <h2>The Approach</h2>
+          <p>
+            The core of the solution was a PXE-based imaging pipeline: machines boot from
+            the network, connect to the imaging server, and receive a fully configured image
+            without a technician needing to touch individual media. The Macrium Reflect
+            Deployment Toolkit provided the image management, deployment orchestration, and
+            the WinPE-based boot environment that made it all work at scale.
+          </p>
+          <ul class="cs-list" role="list">
+            <li>
+              <strong style="color:var(--white)">Infrastructure assessment:</strong> Documented
+              the existing imaging workflow end-to-end — where technician time was spent,
+              where errors were introduced, and what the hard throughput limits were with
+              the current process. This drove the server sizing and network configuration
+              decisions.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Imaging server build:</strong> Configured the
+              dedicated imaging server with appropriate storage for image libraries,
+              redundancy for the deployment environment, and network connectivity to support
+              simultaneous multi-machine deployments without bandwidth becoming the bottleneck.
+            </li>
+            <li>
+              <strong style="color:var(--white)">PXE boot environment:</strong> Configured
+              DHCP options and TFTP to serve the WinPE boot environment to client machines
+              on the network. Any compatible machine on the deployment VLAN could network-boot
+              directly into the imaging environment without local media.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Macrium Reflect Deployment Toolkit setup:</strong>
+              Installed and configured the Deployment Toolkit on the imaging server. Built out
+              the deployment profiles — mapping image versions to hardware targets, configuring
+              post-image tasks (driver injection, hostname assignment, domain join sequencing),
+              and setting up the deployment menu that technicians interact with during a rollout.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Image library and management:</strong> Worked
+              with Microtek's team to capture clean reference images for their current client
+              base. Established a versioning convention so image updates could be tracked,
+              tested, and promoted to production without disrupting active deployment profiles.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Testing and validation:</strong> Ran
+              deployment tests across the hardware SKUs in Microtek's active client base —
+              verifying image integrity, driver compatibility, and post-image state on each
+              target. Identified and resolved a driver injection issue on one hardware line
+              before the system went live.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Documentation and handover:</strong>
+              Documented the full deployment workflow, image versioning process, and
+              troubleshooting procedures. Walked Microtek's technical staff through the
+              system so they could manage it independently after handover.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Outcomes ── -->
+    <section class="cs-outcomes">
+      <div class="container">
+        <h2>Outcomes</h2>
+        <div class="cs-outcomes-grid">
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">2,000+</div>
+            <div class="cs-outcome-label">PCs deployable per week with the new imaging server — consistently, at scale</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">Network</div>
+            <div class="cs-outcome-label">PXE boot — no local media required; machines deploy from the network automatically</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">Centralized</div>
+            <div class="cs-outcome-label">Single image library with version control — updates pushed from one location to all deployment profiles</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">Scalable</div>
+            <div class="cs-outcome-label">Architecture built to scale further — additional imaging capacity can be added without redesign</div>
+          </div>
+        </div>
+        <div class="cs-section" style="margin-top:2.5rem; margin-bottom:0;">
+          <p>
+            The shift from manual, per-machine imaging to a centralized PXE deployment pipeline
+            fundamentally changed Microtek's capacity ceiling. Before, throughput was a direct
+            function of technician headcount. After, technicians manage the process rather than
+            executing it machine by machine — freeing them to handle quality checks, client
+            communication, and the edge cases that actually require human judgment.
+          </p>
+          <p>
+            Microtek continues to operate the system and has expanded its client base since
+            the implementation. Their own words: <em style="color:var(--white)">"After deploying
+            our newest imaging server, Microtek can consistently deploy a custom image to over
+            2,000 computers a week and can scale even further with your needs."</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cs-cta">
+      <div class="container">
+        <h2>Need to scale your deployment pipeline?</h2>
+        <p>
+          Whether you're an MSP building out imaging infrastructure, a school district
+          managing device rollouts, or an organization with a large PC fleet to maintain —
+          let's talk about what a purpose-built deployment workflow looks like for your scale.
+        </p>
+        <div class="cs-cta-actions">
+          <a href="/#contact" class="btn btn-primary">Start a Conversation</a>
+          <a href="/#portfolio" class="btn btn-outline">See More Work</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Zavala <span>Tech</span> Consulting</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/#services">Services</a>
+          <a href="/#about">About</a>
+          <a href="/#portfolio">Work</a>
+          <a href="/#contact">Contact</a>
+          <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="year"></span> Chris Zavala. Colorado.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
