@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: EV Fleet Transition Planning. Vehicle evaluation, charging infrastructure modeling, grid capacity assessment, and Colorado EVIE incentive funding for a Colorado fleet operator.">
+  <meta property="og:title" content="EV Fleet Transition Case Study | Zavala Tech Consulting">
+  <meta property="og:description" content="How we built the evaluation framework, modeled charging infrastructure, and secured EVIE incentive funding for a Colorado fleet transition.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://zavalatechconsulting.com/work/ev-fleet-transition.html">
+  <title>EV Fleet Transition Planning | Zavala Tech Consulting</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Zavala <span>Tech</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#portfolio">Work</a></li>
+        <li><a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── Hero ── -->
+    <section class="cs-hero">
+      <div class="container">
+        <a href="/#portfolio" class="cs-breadcrumb" aria-label="Back to Work">← Back to Work</a>
+        <div class="cs-hero-tag">EV &amp; Fleet</div>
+        <h1>EV Fleet Transition<br>Planning</h1>
+        <p class="cs-hero-summary">
+          A Colorado-based fleet operator managing around 30 mixed commercial vehicles needed
+          a rigorous framework for evaluating an ICE-to-EV transition — one that accounted
+          for vehicle selection, charging infrastructure at two facilities, grid capacity
+          constraints, and available incentive funding. We built it.
+        </p>
+        <div class="cs-meta">
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sector</div>
+            <div class="cs-meta-value">Commercial Fleet Operations</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Fleet Size</div>
+            <div class="cs-meta-value">~30 vehicles (mixed classes)</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Location</div>
+            <div class="cs-meta-value">Colorado (two facilities)</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Incentive Program</div>
+            <div class="cs-meta-value">Colorado EVIE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Body ── -->
+    <section class="cs-body">
+      <div class="container">
+
+        <div class="cs-section reveal">
+          <h2>The Situation</h2>
+          <p>
+            The client's executive team had made a commitment to electrify the fleet by a
+            specific year — partly for sustainability goals, partly in response to Colorado's
+            emissions policy direction, and partly because fuel and maintenance costs on
+            their aging ICE vehicles were climbing. But the commitment had been made without
+            a detailed plan for how to actually execute it.
+          </p>
+          <p>
+            Their fleet included light-duty passenger vehicles, mid-size vans, and a handful
+            of heavier-duty utility vehicles — each with different daily range requirements,
+            payload needs, and replacement timelines. They had two facilities with different
+            electrical infrastructure. And nobody on staff had evaluated an EV fleet
+            transition before. They needed a structured framework, not more research to do
+            on their own.
+          </p>
+        </div>
+
+        <div class="cs-section reveal">
+          <h2>The Challenge</h2>
+          <ul class="cs-list" role="list">
+            <li>No evaluation framework to compare EV models across different vehicle classes and duty cycles</li>
+            <li>Two facilities with different electrical panel capacity — one near its usable limit</li>
+            <li>Uncertainty about whether grid upgrades were required and what they would cost</li>
+            <li>Multiple overlapping incentive programs (federal, state, utility-level) with different eligibility rules and deadlines</li>
+            <li>Pressure to move fast, but no phasing strategy to manage capital expenditure</li>
+            <li>No internal expertise to evaluate charging hardware vendors or Level 2 vs DC fast charging tradeoffs</li>
+          </ul>
+        </div>
+
+        <div class="cs-section reveal">
+          <h2>The Approach</h2>
+          <p>
+            Fleet electrification is an infrastructure project as much as a vehicle procurement
+            project. We approached it in parallel workstreams so the vehicle and charging
+            decisions could inform each other rather than being made in sequence.
+          </p>
+          <ul class="cs-list" role="list">
+            <li>
+              <strong style="color:var(--white)">Fleet duty cycle analysis:</strong> Documented
+              the daily mileage, payload requirements, and route profiles for each vehicle
+              category. Identified that three vehicle classes were clear EV candidates with
+              available models (range well within daily duty cycle); one class had limited
+              EV options and was deferred to Phase 2 pending market availability.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Vehicle evaluation matrix:</strong> Built a
+              weighted scoring matrix across range, payload rating, total cost of ownership
+              over five years (purchase + fuel + maintenance delta vs ICE), availability, and
+              serviceability in Colorado. Evaluated six models across three manufacturers.
+              Produced a ranked recommendation with supporting data the client team could
+              validate and own.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Charging infrastructure modeling:</strong>
+              For each facility, calculated the number of Level 2 chargers required based on
+              fleet size, overnight dwell time, and charge rates. Modeled load additions to
+              the existing electrical service. Facility 1 could support Phase 1 vehicles with
+              a subpanel addition; Facility 2 required either load management software or a
+              service upgrade — we modeled both options with cost and timeline estimates.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Utility engagement:</strong> Initiated an
+              interconnection inquiry with the serving utility for Facility 2 to get an
+              official grid capacity assessment and estimated upgrade costs. This turned out
+              to be a significant project-risk item — the utility timeline for a service
+              upgrade was 9–14 months, which had to be reflected in the phasing plan.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Incentive mapping:</strong> Documented
+              federal tax credit eligibility under IRA Section 45W (commercial clean vehicles),
+              Colorado EVIE grant eligibility for both vehicles and charging infrastructure,
+              and the client's serving utility's EV fleet rate program. Produced a
+              prioritized application calendar with deadlines and required documentation.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Phased rollout plan:</strong> Phase 1
+              targeted the 10 light-duty passenger vehicles — lowest capital cost, best EV
+              model availability, and routes with the most predictable mileage. Phase 2
+              covered the vans after Facility 2's charging infrastructure was resolved.
+              Phase 3 deferred the specialty utility vehicles pending market availability.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Outcomes ── -->
+    <section class="cs-outcomes">
+      <div class="container">
+        <h2>Outcomes</h2>
+        <div class="cs-outcomes-grid">
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">EVIE</div>
+            <div class="cs-outcome-label">Fleet qualified for Colorado EVIE incentive funding — vehicles and charging infrastructure</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">Phase 1</div>
+            <div class="cs-outcome-label">10 light-duty vehicles converted in Phase 1 pilot — on budget, on schedule</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">Deferred</div>
+            <div class="cs-outcome-label">Facility 2 grid upgrade deferred via load management software — significant capital cost avoided in Phase 1</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">Reusable</div>
+            <div class="cs-outcome-label">Decision framework and evaluation matrix owned by the client team — ready to apply as fleet grows</div>
+          </div>
+        </div>
+        <div class="cs-section" style="margin-top:2.5rem; margin-bottom:0;">
+          <p>
+            The utility timeline finding was the most impactful piece of the engagement for
+            the client. They had been assuming Facility 2's infrastructure work would take
+            three months; the actual utility estimate came back at 9–14 months. Without that
+            in the plan, Phase 2 would have been delayed by nearly a year with no warning.
+            Building that discovery into the phasing — and identifying the load management
+            software as a Phase 1 bridge — kept the overall project on track.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cs-cta">
+      <div class="container">
+        <h2>Evaluating a fleet transition?</h2>
+        <p>
+          EV fleet decisions involve infrastructure, incentives, utility coordination, and
+          procurement — all at the same time. Let's build a plan that accounts for all of it
+          before you start writing checks.
+        </p>
+        <div class="cs-cta-actions">
+          <a href="/#contact" class="btn btn-primary">Start a Conversation</a>
+          <a href="/#portfolio" class="btn btn-outline">See More Work</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Zavala <span>Tech</span> Consulting</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/#services">Services</a>
+          <a href="/#about">About</a>
+          <a href="/#portfolio">Work</a>
+          <a href="/#contact">Contact</a>
+          <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="year"></span> Chris Zavala. Colorado.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
