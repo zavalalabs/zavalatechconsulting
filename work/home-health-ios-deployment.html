@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: Absorbing a 50-iPad home health fleet from a departing MSP with no inventory, no MDM, and a Verizon account full of decommissioning 3G devices. Delivered full management, DEP enrollment, and Medicaid EVV compliance within 8 months.">
+  <meta property="og:title" content="iOS Fleet Takeover &amp; MDM Buildout: Home Health Organization | Zavala Tech Consulting">
+  <meta property="og:description" content="Inherited a 50-iPad field deployment with no inventory and no MDM. Established DEP enrollment, audited a legacy Verizon account through 3G decommission, and enabled HIPAA-compliant EVV charting for Medicaid compliance.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://zavalatechconsulting.com/work/home-health-ios-deployment.html">
+  <title>iOS Fleet Takeover &amp; MDM Buildout: Home Health Organization | Zavala Tech Consulting</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Zavala <span>Tech</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#portfolio">Work</a></li>
+        <li><a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── Hero ── -->
+    <section class="cs-hero">
+      <div class="container">
+        <a href="/#portfolio" class="cs-breadcrumb" aria-label="Back to Work">← Back to Work</a>
+        <div class="cs-hero-tag">Healthcare Technology</div>
+        <h1>iOS Fleet Takeover &amp; MDM Buildout:<br>Colorado Home Health Organization</h1>
+        <p class="cs-hero-summary">
+          When a Colorado home health organization transitioned their IT to ISI, we inherited
+          a 50-iPad field deployment with no usable inventory, no MDM enrollment, and a Verizon
+          account carrying legacy 3G devices heading into network decommission. Over 8 months we
+          located every device, established Apple DEP enrollment with proper business registration,
+          audited and right-sized the carrier account, and delivered the HIPAA-compliant mobile
+          infrastructure their clinicians needed for Medicaid Electronic Visit Verification, all
+          under tight budget constraints on both sides.
+        </p>
+        <div class="cs-meta">
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Client</div>
+            <div class="cs-meta-value">A Colorado Home Health Organization</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sector</div>
+            <div class="cs-meta-value">Healthcare Technology</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Delivered via</div>
+            <div class="cs-meta-value">Information Systems Integrators (ISI)</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Timeframe</div>
+            <div class="cs-meta-value">August 2014 – August 2019</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Stack</div>
+            <div class="cs-meta-value">macOS Server · Profile Manager · Apple DEP · VPP · Microsoft Access · Verizon Business · iOS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Body ── -->
+    <section class="cs-body">
+      <div class="container">
+
+        <div class="cs-section reveal">
+          <h2>The Situation</h2>
+          <p>
+            Home health organizations were under pressure from two directions in the mid-2010s.
+            Medicaid programs were beginning to mandate Electronic Visit Verification (EVV),
+            requiring proof that a clinician was physically present at a patient's location at
+            the time of a visit, validated by geolocation and electronic signature. Simultaneously,
+            the industry was moving from paper charts to digital charting platforms, and field
+            clinicians were the last link in that chain. The device in their hands was no longer
+            a nice-to-have. It was a compliance and billing requirement.
+          </p>
+          <p>
+            When this Colorado home health organization transitioned their IT services to ISI,
+            we inherited the infrastructure as it existed: approximately 50 iPads distributed
+            across field clinicians with no centralized management, no formal inventory, and no
+            MDM enrollment. The devices had originally been set up under a previous MSP without
+            proper Apple business program registration, which meant there was no clean path to
+            remote management, no visibility into what was enrolled or missing, and no ability
+            to push the HIPAA-compliant charting application in a controlled way.
+          </p>
+          <p>
+            Layered on top of that was a Verizon account in need of serious auditing. The
+            fleet included older cellular iPads on 3G data plans, and Verizon was in the
+            process of decommissioning the 3G network. Some devices had finished their
+            financing terms and were still on active lines. Some lines had no active device
+            attached at all. The org was paying for connectivity that either no longer worked
+            or was attached to hardware that shouldn't have been on the account.
+          </p>
+          <p>
+            This engagement was delivered through ISI, where I was responsible for the
+            technical intake, MDM buildout, carrier account remediation, and ongoing device
+            management for the duration of the five-year relationship.
+          </p>
+        </div>
+
+        <div class="cs-section reveal">
+          <h2>The Challenge</h2>
+          <ul class="cs-list" role="list">
+            <li>No usable asset inventory: 50 devices in the field, distributed across clinicians, with no reliable record of serial numbers, assigned users, or device state</li>
+            <li>No MDM enrollment: devices had been configured manually or under a previous provider's account, with no path to remote management without re-enrolling each one</li>
+            <li>No Apple DEP business registration: the organization lacked the DUNS number registration and Apple Business Manager setup required to enroll devices under their own business identity</li>
+            <li>Legacy 3G iPads facing imminent decommission: Verizon's 3G network shutdown meant some devices would simply stop working on cellular, with no warning to clinicians in the field</li>
+            <li>Verizon account carrying unused lines and unfinanced devices still on active billing</li>
+            <li>EVV compliance requirement: Medicaid reimbursement depended on the charting platform capturing geolocation and electronic signatures at the point of care, which required a properly managed, HIPAA-compliant device environment</li>
+            <li>Budget constraints on both sides: the org had limited capital for hardware refreshes, and ISI's engagement time was not unlimited</li>
+            <li>MDM was a skill set being built in parallel: Profile Manager on macOS Server was not a widely understood tool at the time, and this engagement was an early deployment of it in the field</li>
+          </ul>
+        </div>
+
+        <div class="cs-section reveal">
+          <h2>The Approach</h2>
+          <p>
+            The first priority was establishing ground truth: we couldn't manage what we couldn't
+            find, and we couldn't plan a Verizon transition or MDM enrollment strategy without
+            knowing exactly what existed. Everything else was sequenced off that foundation.
+          </p>
+          <ul class="cs-list" role="list">
+            <li>
+              <strong style="color:var(--white)">Asset discovery and inventory:</strong>
+              Worked directly with the organization's leadership and clinical coordinators to
+              physically locate all devices in the field. This meant contacting clinicians,
+              collecting serial numbers, documenting assigned users, and reconciling what we
+              found against the Verizon account and any existing records from the prior MSP.
+              The result was the first accurate device inventory the organization had ever had.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Low-cost asset tracking with Microsoft Access:</strong>
+              Dedicated asset management tools like Snipe-IT were not yet widely accessible
+              for small-scale infrastructure, and the budget ruled out anything purpose-built.
+              The practical solution was Microsoft Access. Using skills carried over from earlier
+              in my career, I built a custom database to track device serial numbers, assigned
+              clinicians, Verizon line assignments, and device state across all 50 iPads.
+              Asset labels were generated and printed directly from Access and physically
+              applied to each device, giving us a paper trail that matched the digital record.
+              It wasn't a sophisticated system, but it was accurate, maintainable, and cost
+              nothing beyond the time to build it. That database was the working inventory
+              that made enrollment sequencing, Verizon auditing, and user assignment tracking
+              possible throughout the engagement.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Apple Business registration and DEP setup:</strong>
+              Registered the organization's DUNS number with Apple Business Manager and
+              established their DEP account, the foundational step that made every subsequent
+              MDM action possible. Without this, devices couldn't be enrolled under the org's
+              own business identity, and remote management, app distribution, and device
+              lock/wipe capabilities would remain out of reach. Getting this right required
+              navigating Apple's business verification process and coordinating the transfer
+              of device records from the prior arrangement.
+            </li>
+            <li>
+              <strong style="color:var(--white)">MDM buildout via Profile Manager on macOS Server:</strong>
+              Deployed Profile Manager on a Mac mini running macOS Server with a Fusion Drive
+              as the MDM platform. At this point in the market, purpose-built MDM solutions
+              like JAMF were primarily enterprise-priced tools. Profile Manager was the
+              practical, budget-appropriate solution for an organization at this scale, and
+              it integrated directly with Apple's DEP and VPP programs. Configured device
+              profiles to enforce screen lock, passcode policy, and app restriction settings
+              appropriate for a HIPAA-adjacent environment.
+            </li>
+            <li>
+              <strong style="color:var(--white)">VPP app licensing and deployment:</strong>
+              Set up Volume Purchase Program licensing to acquire and distribute the HIPAA-compliant
+              digital charting application across all enrolled devices. VPP allowed the org
+              to hold the app licenses under their own account, not tied to individual Apple
+              IDs, which was critical for managing device reassignment when clinician turnover
+              occurred. Apps could be pushed silently to enrolled devices without requiring
+              clinicians to interact with the App Store.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Verizon account audit and lifecycle management:</strong>
+              Worked directly with Verizon Business representatives to audit the full account:
+              identified lines with no active device, devices that had completed financing
+              terms but remained on monthly service, and cellular iPads running on 3G that
+              would be rendered non-functional by the network decommission. Coordinated bulk
+              device swaps for the 3G hardware, negotiated updated data plan structures for
+              the replacement devices, and established a standardized ordering process for
+              new lines when eligible staff needed cellular devices. Removed billing for
+              hardware and lines that had no business being on the account.
+            </li>
+            <li>
+              <strong style="color:var(--white)">Fleet modernization planning:</strong>
+              The 3G decommission created a forced refresh cycle, but it was also an
+              opportunity to standardize on a current iPad model and cellular band configuration
+              that would have a longer operational life. Coordinated bulk orders through
+              Verizon Business to replace aging hardware in batches rather than one-off, which
+              simplified enrollment and kept the Verizon account structure clean.
+            </li>
+            <li>
+              <strong style="color:var(--white)">EVV and HIPAA-compliant charting deployment:</strong>
+              The charting platform used the iPad's native GPS to record visit location and
+              timestamps, paired with electronic signature capture, to satisfy Electronic Visit
+              Verification requirements for Medicaid billing. Deploying this correctly required
+              the device to be enrolled, the app to be present and configured, and location
+              services to be permitted at the system level, all of which the MDM profile
+              controlled. Clinicians in the field had what they needed without manual setup
+              on each device.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Outcomes ── -->
+    <section class="cs-outcomes">
+      <div class="container">
+        <h2>Outcomes</h2>
+        <div class="cs-outcomes-grid">
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">50</div>
+            <div class="cs-outcome-label">Field iPads located, inventoried, enrolled in DEP, and under active MDM management within 8 months of MSP transition</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">Zero</div>
+            <div class="cs-outcome-label">Prior asset inventory: the organization had no reliable record of devices, users, or Verizon lines before this engagement</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">3G</div>
+            <div class="cs-outcome-label">Legacy fleet fully audited and replaced ahead of Verizon's network decommission, with no clinicians left holding dead cellular devices in the field</div>
+          </div>
+          <div class="cs-outcome-card">
+            <div class="cs-outcome-num">EVV</div>
+            <div class="cs-outcome-label">Medicaid Electronic Visit Verification compliance enabled via managed geolocation and electronic signature on enrolled iPads</div>
+          </div>
+        </div>
+        <div class="cs-section" style="margin-top:2.5rem; margin-bottom:0;">
+          <p>
+            The most significant outcome of this engagement wasn't a single technical milestone.
+            It was the shift from invisible to managed. The organization went from having no
+            reliable knowledge of their field device fleet to having a clean inventory, a carrier
+            account that reflected reality, and an MDM platform that gave them the ability to
+            push apps, enforce policies, and lock or wipe a device if a clinician left. That
+            foundation made everything downstream possible: EVV compliance, HIPAA-appropriate
+            data handling, and a hardware refresh cycle that wasn't driven by crisis.
+          </p>
+          <p>
+            The Verizon audit removed billing waste that had accumulated under the previous
+            arrangement: unused lines, legacy 3G devices that were already functionally obsolete,
+            and hardware that had been paid off but was still running on active service contracts.
+            Getting that account into a clean state, with standardized ordering and a business
+            representative relationship, gave the organization predictable carrier costs and a
+            process for handling new devices and staff changes that didn't require starting from
+            scratch each time.
+          </p>
+          <p>
+            ISI managed this client's mobile environment for five years, absorbing the iPads
+            as part of a broader IT takeover that included their full systems infrastructure.
+            The initial 8-month onboarding sprint established the practices that made the
+            long-term relationship straightforward.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cs-cta">
+      <div class="container">
+        <h2>Managing a mobile fleet in a regulated environment?</h2>
+        <p>
+          Whether you're a home health organization navigating EVV compliance, a clinical
+          practice rolling out iPads for the first time, or an MSP absorbing a new client
+          with an undocumented device estate, let's talk about what a clean MDM foundation
+          looks like for your situation.
+        </p>
+        <div class="cs-cta-actions">
+          <a href="/#contact" class="btn btn-primary">Start a Conversation</a>
+          <a href="/#portfolio" class="btn btn-outline">See More Work</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Zavala <span>Tech</span> Consulting</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/#services">Services</a>
+          <a href="/#about">About</a>
+          <a href="/#portfolio">Work</a>
+          <a href="/#contact">Contact</a>
+          <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="year"></span> Chris Zavala. Colorado.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
