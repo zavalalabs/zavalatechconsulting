@@ -324,68 +324,51 @@
 
         <div class="contact-form">
 
-          <!-- Success banner — shown by Formspree SDK after submit -->
-          <div data-fs-success class="fs-success" role="alert">
-            <span>&#10003;</span> Got it — I'll be in touch within 24 hours, Mon–Fri.
-          </div>
-
-          <!-- Form-level error (e.g. network failure) -->
-          <div data-fs-error class="fs-form-error" role="alert"></div>
-
-          <form id="contactForm">
+          <form action="https://formspree.io/f/mdayvdyb" method="POST">
+            <input type="hidden" name="_next" value="https://zavalatechconsulting.com/thanks.html">
 
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name"
                        placeholder="Jane Smith" required
-                       aria-required="true" aria-describedby="name-error"
-                       data-fs-field>
-                <span id="name-error" data-fs-error="name" class="fs-field-error" aria-live="polite"></span>
+                       aria-required="true">
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email"
                        placeholder="jane@company.com" required
-                       aria-required="true" aria-describedby="email-error"
-                       data-fs-field>
-                <span id="email-error" data-fs-error="email" class="fs-field-error" aria-live="polite"></span>
+                       aria-required="true">
               </div>
             </div>
 
             <div class="form-group">
               <label for="company">Company / Organization</label>
               <input type="text" id="company" name="company"
-                     placeholder="Optional"
-                     data-fs-field>
+                     placeholder="Optional">
             </div>
 
             <div class="form-group">
               <label for="service">What are you looking for help with?</label>
-              <select id="service" name="service" aria-describedby="service-error" data-fs-field>
-                <option value="">— Select a topic —</option>
+              <select id="service" name="service">
+                <option value="">Select a topic</option>
                 <option>Infrastructure &amp; Networking</option>
                 <option>Workplace Technology Strategy</option>
                 <option>IT Assessment &amp; Roadmapping</option>
-
                 <option>Fractional IT Leadership</option>
                 <option>EV &amp; Fleet Technology</option>
                 <option>Something else</option>
               </select>
-              <span id="service-error" data-fs-error="service" class="fs-field-error" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
               <label for="message">Tell me what you're working on</label>
               <textarea id="message" name="message"
-                placeholder="A few sentences is plenty — what's the situation and what outcome are you trying to reach?"
-                required aria-required="true" aria-describedby="message-error"
-                data-fs-field></textarea>
-              <span id="message-error" data-fs-error="message" class="fs-field-error" aria-live="polite"></span>
+                placeholder="A few sentences is plenty. What's the situation and what outcome are you trying to reach?"
+                required aria-required="true"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary form-submit"
-                    data-fs-submit-btn>Send Message</button>
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
 
           </form>
         </div>
@@ -418,15 +401,6 @@
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="assets/js/main.js" defer></script>
-
-  <!-- Formspree Ajax SDK -->
-  <script>
-    window.formspree = window.formspree || function () {
-      (formspree.q = formspree.q || []).push(arguments);
-    };
-    formspree('initForm', { formElement: '#contactForm', formId: 'mdayvdyb' });
-  </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 
 </body>
