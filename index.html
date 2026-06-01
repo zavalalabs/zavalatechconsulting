@@ -17,7 +17,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zavala Tech Consulting — IT strategy, infrastructure, and workplace technology consulting for organizations in Colorado and beyond.">
+  <meta name="description" content="Zavala Tech Consulting — IT strategy, infrastructure, and workplace technology consulting for organizations in Colorado and beyond. Practical work, run with an engineer's precision.">
   <meta property="og:title" content="Zavala Tech Consulting | IT Strategy & Infrastructure">
   <meta property="og:description" content="Practical IT strategy, infrastructure consulting, and workplace technology guidance for organizations in Colorado and beyond.">
   <meta property="og:type" content="website">
@@ -27,374 +27,323 @@
   <meta name="twitter:description" content="Practical IT strategy and infrastructure consulting. Colorado-based, remote-ready.">
   <link rel="canonical" href="https://zavalatechconsulting.com/">
   <title>Zavala Tech Consulting | IT Strategy & Infrastructure</title>
-  <link rel="stylesheet" href="assets/css/style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
-  <!-- Skip link — hidden until focused (ADA/WCAG 2.1 SC 2.4.1) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ════════════════════════════════════════
-       NAV
-  ════════════════════════════════════════ -->
+  <!-- ════════════ NAV ════════════ -->
   <header>
-  <nav aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-brand">Zavala <span>Tech</span></a>
+    <nav aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="#hero" class="brand" aria-label="Zavala Tech Consulting — home">
+          <span class="brand-mark">z<i>t</i></span>
+          <span class="brand-word">Zavala&nbsp;Tech <em>/ consulting</em></span>
+        </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Work</a></li>
-        <li><a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a></li>
-        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-      </ul>
-    </div>
-  </nav>
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#services">services</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#work">work</a></li>
+          <li><a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">blog</a></li>
+          <li><a href="#contact" class="nav-cta">get in touch</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <main id="main-content">
 
-  <!-- ════════════════════════════════════════
-       HERO
-  ════════════════════════════════════════ -->
-  <section id="hero">
-    <div class="hero-eyebrow">IT Consulting · Colorado &amp; Remote</div>
-
-    <h1>Technology that works<br>for <em>your</em> organization</h1>
-
-    <p class="hero-sub">
-      Practical IT strategy, infrastructure consulting, and workplace
-      technology guidance — without the enterprise overhead or the
-      consultant who disappears after the deck is delivered.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Start a Conversation</a>
-      <a href="#services" class="btn btn-outline">See What I Do</a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Years in IT</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">1,200+</div>
-        <div class="stat-label">Org Size Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">CO</div>
-        <div class="stat-label">Based, Remote-Ready</div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ════════════════════════════════════════
-       SERVICES
-  ════════════════════════════════════════ -->
-  <section id="services">
-    <div class="container">
-      <div class="services-header">
-        <div class="section-label">What I Do</div>
-        <h2 class="section-heading">Services</h2>
-        <p class="section-sub">
-          Focused engagements designed to move fast and deliver real outcomes —
-          not 200-page reports that gather dust.
-        </p>
-      </div>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-          <span class="service-icon" aria-hidden="true">🏗️</span>
-          <h3>Infrastructure &amp; Networking</h3>
-          <p>
-            Network design, on-premise and hybrid cloud infrastructure,
-            virtualization (Proxmox, VMware), firewall and security hardening,
-            and disaster recovery planning for organizations that can't afford downtime.
-          </p>
+    <!-- ════════════ HERO ════════════ -->
+    <section id="hero">
+      <div class="hero-card">
+        <div class="statusbar">
+          <div class="l">zt@colorado<b>:~$</b> whoami<span class="cursor"></span></div>
+          <div class="r">Colorado · available remote nationwide</div>
         </div>
-
-        <div class="service-card">
-          <span class="service-icon" aria-hidden="true">🏢</span>
-          <h3>Workplace Technology Strategy</h3>
-          <p>
-            Hybrid work tooling, collaboration platform evaluation, IT policy
-            development, and the hard conversations about what your tech stack
-            is actually costing you in productivity and retention.
+        <div class="hero-body">
+          <h1>Technology that works for <em>your</em> organization — and someone who sticks around.</h1>
+          <p class="hero-sub">
+            Practical IT strategy, infrastructure, and workplace technology, run with an
+            engineer's precision. No enterprise overhead, no consultant who vanishes after
+            the deck is delivered.
           </p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-icon" aria-hidden="true">📋</span>
-          <h3>IT Assessment &amp; Roadmapping</h3>
-          <p>
-            A structured look at where your IT environment is today, where it
-            needs to go, and a prioritized roadmap that maps to your budget —
-            not a vendor's quota.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <span class="service-icon" aria-hidden="true">⚡</span>
-          <h3>Fractional IT Leadership</h3>
-          <p>
-            Need a technical voice in the room without the full-time hire?
-            Fractional CTO/IT Director engagements for growing organizations
-            that need senior-level guidance on a consulting basis.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-icon" aria-hidden="true">🚗</span>
-          <h3>EV &amp; Fleet Technology</h3>
-          <p>
-            Charging infrastructure planning, EV fleet integration, and
-            technology guidance for Colorado organizations making the transition
-            — from policy to plug.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ════════════════════════════════════════
-       ABOUT
-  ════════════════════════════════════════ -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-
-        <div class="about-content">
-          <div class="section-label">About</div>
-          <h2 class="section-heading">Practical experience.<br>Direct advice.</h2>
-
-          <p>
-            I'm Chris Zavala — an IT professional based in Colorado with over a decade of hands-on experience across infrastructure, workplace technology, and organizational IT strategy. I've worked inside organizations ranging from lean 10-person SMBs to enterprise environments with 1,200+ employees, which means I understand both the budget constraints and the political realities.
-          </p>
-          <p>
-            My background is practical, not theoretical. I've built and maintained the infrastructure, argued for the tooling budget, and managed the conversation with leadership when the technology isn't working the way anyone promised it would. I write about technology and workplace dynamics at <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">blog.chriszavala.com</a> — the same thinking I bring to client engagements.
-          </p>
-          <p>
-            I take a limited number of engagements at a time so I can give each one real attention. If you need someone who will give you a straight answer and stick around to help implement it, let's talk.
-          </p>
-
-          <div class="about-tags">
-            <span class="tag">Proxmox / VMware</span>
-            <span class="tag">OPNsense / pfSense</span>
-            <span class="tag">Microsoft 365</span>
-            <span class="tag">Hybrid Work</span>
-            <span class="tag">Network Design</span>
-            <span class="tag">Security Hardening</span>
-            <span class="tag">Colorado</span>
-            <span class="tag">Remote</span>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Start a conversation</a>
+            <a href="#services" class="btn btn-outline">$ see what I do</a>
+          </div>
+          <div class="specs">
+            <div class="spec"><div class="spec-label">experience</div><div class="spec-num">10<em>+</em> <small>yrs</small></div></div>
+            <div class="spec"><div class="spec-label">org scale</div><div class="spec-num">1,200<em>+</em></div></div>
+            <div class="spec"><div class="spec-label">base</div><div class="spec-num">Colorado</div></div>
+            <div class="spec"><div class="spec-label">response</div><div class="spec-num">&lt;24<small>h</small></div></div>
           </div>
         </div>
-
-        <div class="about-card">
-          <h3>What to expect</h3>
-          <ul class="credential-list">
-            <li>A discovery call to understand your situation before I propose anything</li>
-            <li>Clear scope, clear deliverables — no scope creep surprises</li>
-            <li>Recommendations based on your budget and reality, not best-case scenarios</li>
-            <li>Documentation that your team can actually use after the engagement ends</li>
-            <li>Availability for follow-up questions — I don't disappear post-delivery</li>
-            <li>Honest feedback, even when it's not what you were hoping to hear</li>
-          </ul>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- ════════════════════════════════════════
-       PORTFOLIO
-  ════════════════════════════════════════ -->
-  <section id="portfolio">
-    <div class="container">
-      <div class="portfolio-header">
-        <div>
-          <div class="section-label">Work</div>
-          <h2 class="section-heading">Project Showcase</h2>
+    <!-- ════════════ SERVICES ════════════ -->
+    <section id="services">
+      <div class="container">
+        <div class="svc-head reveal">
+          <div>
+            <div class="kicker">// what I do</div>
+            <h2 class="section-title">Services</h2>
+          </div>
+          <p class="svc-meta">05 focused engagements —<br>built to move fast and deliver<br>outcomes, not dusty reports.</p>
         </div>
-        <!-- add a "View all" link here once you have more case studies -->
+
+        <div class="module reveal">
+          <div class="module-id"><span class="n">01</span><span class="node"></span></div>
+          <div>
+            <h3>Infrastructure &amp; Networking</h3>
+            <p>Network design, on-prem and hybrid cloud, virtualization (Proxmox, VMware), firewall and security hardening, and disaster-recovery planning for organizations that can't afford downtime.</p>
+          </div>
+          <div class="chips"><span class="chip">Proxmox</span><span class="chip">VMware</span><span class="chip">OPNsense</span><span class="chip">VLAN</span></div>
+        </div>
+
+        <div class="module reveal">
+          <div class="module-id"><span class="n">02</span><span class="node"></span></div>
+          <div>
+            <h3>Workplace Technology Strategy</h3>
+            <p>Hybrid-work tooling, collaboration platform evaluation, IT policy development, and the hard conversations about what your tech stack is actually costing you in productivity and retention.</p>
+          </div>
+          <div class="chips"><span class="chip">Microsoft 365</span><span class="chip">Hybrid</span><span class="chip">IT Policy</span></div>
+        </div>
+
+        <div class="module reveal">
+          <div class="module-id"><span class="n">03</span><span class="node"></span></div>
+          <div>
+            <h3>IT Assessment &amp; Roadmapping</h3>
+            <p>A structured look at where your IT environment is today, where it needs to go, and a prioritized roadmap that maps to your budget — not a vendor's quota.</p>
+          </div>
+          <div class="chips"><span class="chip">Audit</span><span class="chip">Roadmap</span><span class="chip">Budget</span></div>
+        </div>
+
+        <div class="module reveal">
+          <div class="module-id"><span class="n">04</span><span class="node"></span></div>
+          <div>
+            <h3>Fractional IT Leadership</h3>
+            <p>Need a technical voice in the room without the full-time hire? Fractional CTO / IT Director engagements for growing organizations that need senior-level guidance on a consulting basis.</p>
+          </div>
+          <div class="chips"><span class="chip">Fractional CTO</span><span class="chip">Advisory</span></div>
+        </div>
+
+        <div class="module reveal">
+          <div class="module-id"><span class="n">05</span><span class="node"></span></div>
+          <div>
+            <h3>EV &amp; Fleet Technology</h3>
+            <p>Charging infrastructure planning, EV fleet integration, and technology guidance for Colorado organizations making the transition — from policy to plug.</p>
+          </div>
+          <div class="chips"><span class="chip">Charging</span><span class="chip">Fleet</span><span class="chip">Policy</span></div>
+        </div>
       </div>
+    </section>
 
-      <div class="portfolio-grid">
-
-        <div class="portfolio-card">
-          <div class="portfolio-card-img" aria-hidden="true">🖧</div>
-          <div class="portfolio-card-body">
-            <span class="portfolio-tag">Infrastructure</span>
-            <h3>Homelab-to-Production Network Redesign</h3>
-            <p>
-              Designed and deployed a full infrastructure overhaul for a small business: Proxmox hypervisor replacing aging Windows Server hardware, Ubiquiti UniFi at the edge with VLAN segmentation for staff, IoT, and guest traffic, plus Wasabi cloud backup replacing an unreliable tape rotation. Delivered runbooks the client could actually use without calling for help.
-            </p>
-            <a href="work/network-redesign.html" class="portfolio-card-link">Read the case study →</a>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-card-img" aria-hidden="true">🏢</div>
-          <div class="portfolio-card-body">
-            <span class="portfolio-tag">Workplace Technology</span>
-            <h3>Hybrid Work Policy &amp; Tooling Audit</h3>
-            <p>
-              Conducted a full collaboration stack audit for a mid-sized hybrid organization: identified three overlapping video conferencing contracts, two redundant file storage platforms, and a shadow IT Slack workspace no one in IT knew about. Delivered a consolidation roadmap with a 14-month payback period and change management sequencing to minimize disruption.
-            </p>
-            <a href="work/hybrid-work-audit.html" class="portfolio-card-link">Read the case study →</a>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-card-img" aria-hidden="true">🖥️</div>
-          <div class="portfolio-card-body">
-            <span class="portfolio-tag">Education Technology</span>
-            <h3>Large-Scale Imaging Server Implementation — Microtek</h3>
-            <p>
-              Replaced a repurposed Norton Ghost workstation with a purpose-built 1U imaging server and 10G network infrastructure for Microtek, a Colorado education technology firm. The result: endpoint mSATA drives saturated over 1G connections, an assembly-line deployment workflow, and capacity for over 2,000 custom PC images per week.
-            </p>
-            <a href="work/microtek-imaging-server.html" class="portfolio-card-link">Read the case study →</a>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-card-img" aria-hidden="true">📱</div>
-          <div class="portfolio-card-body">
-            <span class="portfolio-tag">Healthcare Technology</span>
-            <h3>iOS Fleet Takeover &amp; MDM Buildout: Home Health Organization</h3>
-            <p>
-              Absorbed a 50-iPad field deployment from a departing MSP with no inventory, no MDM enrollment, and a Verizon account full of legacy 3G devices heading into network decommission. Established Apple DEP enrollment, deployed Profile Manager on macOS Server, audited and right-sized the carrier account, and enabled HIPAA-compliant Electronic Visit Verification for Medicaid compliance within 8 months.
-            </p>
-            <a href="work/home-health-ios-deployment.html" class="portfolio-card-link">Read the case study →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ════════════════════════════════════════
-       CONTACT
-  ════════════════════════════════════════ -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-grid">
-
-        <div class="contact-info">
-          <div class="section-label">Contact</div>
-          <h2 class="section-heading">Let's talk about<br>what you're solving.</h2>
-          <p>
-            Tell me what you're working on. If it's something I can help with,
-            I'll say so. If it's not, I'll tell you that too and point you
-            somewhere useful. No hard sell.
-          </p>
-
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="contact-method-icon" aria-hidden="true">📍</div>
-              <span>Colorado — available remote nationwide</span>
-            </div>
-            <div class="contact-method">
-              <div class="contact-method-icon" aria-hidden="true">⏱️</div>
-              <span>Typically respond within 24 hours, Mon–Fri</span>
-            </div>
-            <div class="contact-method">
-              <div class="contact-method-icon" aria-hidden="true">📝</div>
-              <span>
-                Read my thinking at
-                <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">blog.chriszavala.com</a>
-              </span>
+    <!-- ════════════ ABOUT ════════════ -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content reveal">
+            <div class="kicker">// about</div>
+            <h2 class="section-title">Practical experience.<br><em>Direct</em> advice.</h2>
+            <p>I'm <strong>Chris Zavala</strong> — an IT professional based in Colorado with over a decade of hands-on experience across infrastructure, workplace technology, and organizational IT strategy. I've worked inside organizations ranging from lean 10-person SMBs to enterprise environments with 1,200+ employees, which means I understand both the budget constraints and the political realities.</p>
+            <p>My background is practical, not theoretical. I've built and maintained the infrastructure, argued for the tooling budget, and managed the conversation with leadership when the technology isn't working the way anyone promised it would. I write about technology and workplace dynamics at <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">blog.chriszavala.com</a> — the same thinking I bring to client engagements.</p>
+            <p>I take a limited number of engagements at a time so I can give each one real attention. If you need someone who will give you a straight answer and stick around to help implement it, let's talk.</p>
+            <div class="about-tags">
+              <span class="tag">Proxmox / VMware</span>
+              <span class="tag">OPNsense / pfSense</span>
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">Hybrid Work</span>
+              <span class="tag">Network Design</span>
+              <span class="tag">Security Hardening</span>
+              <span class="tag">Colorado</span>
+              <span class="tag">Remote</span>
             </div>
           </div>
+
+          <aside class="expect-card reveal">
+            <div class="expect-bar">
+              <span class="dot" style="background:#ec6a5e"></span>
+              <span class="dot" style="background:#f4bf4f"></span>
+              <span class="dot" style="background:#61c554"></span>
+              <span class="fname">~/what-to-expect.md</span>
+            </div>
+            <ul class="expect-list" role="list">
+              <li>A discovery call to understand your situation before I propose anything</li>
+              <li>Clear scope, clear deliverables — no scope-creep surprises</li>
+              <li>Recommendations based on your budget and reality, not best-case scenarios</li>
+              <li>Documentation your team can actually use after the engagement ends</li>
+              <li>Availability for follow-up questions — I don't disappear post-delivery</li>
+              <li>Honest feedback, even when it's not what you were hoping to hear</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ WORK ════════════ -->
+    <section id="work">
+      <div class="container">
+        <div class="work-head reveal">
+          <div>
+            <div class="kicker">// selected work</div>
+            <h2 class="section-title">Project Showcase</h2>
+          </div>
+          <p class="svc-meta">Real engagements, real<br>constraints, documented<br>outcomes.</p>
         </div>
 
-        <div class="contact-form">
+        <div class="work-grid reveal-stagger">
+          <a class="work-card" href="work/network-redesign.html">
+            <div class="work-band"><span class="case-id">CASE_01</span><span class="case-tag">Infrastructure</span></div>
+            <div class="work-body">
+              <h3>Homelab-to-Production Network Redesign</h3>
+              <p>Proxmox replacing aging Windows Server, UniFi at the edge with VLAN segmentation for staff, IoT, and guest traffic, plus verified Wasabi cloud backup replacing an unreliable tape rotation — with runbooks the client could actually use.</p>
+              <span class="work-link">read the case study →</span>
+            </div>
+          </a>
 
-          <form action="https://formspree.io/f/mdayvdyb" method="POST">
-            <input type="hidden" name="_next" value="https://zavalatechconsulting.com/thanks.html">
+          <a class="work-card" href="work/hybrid-work-audit.html">
+            <div class="work-band"><span class="case-id">CASE_02</span><span class="case-tag">Workplace Technology</span></div>
+            <div class="work-body">
+              <h3>Hybrid Work Policy &amp; Tooling Audit</h3>
+              <p>A full collaboration-stack audit for a mid-sized hybrid org: three overlapping video contracts, two redundant storage platforms, and a shadow-IT Slack workspace. Delivered a consolidation roadmap with a 14-month payback.</p>
+              <span class="work-link">read the case study →</span>
+            </div>
+          </a>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name"
-                       placeholder="Jane Smith" required
-                       aria-required="true">
+          <a class="work-card" href="work/microtek-imaging-server.html">
+            <div class="work-band"><span class="case-id">CASE_03</span><span class="case-tag">Education Technology</span></div>
+            <div class="work-body">
+              <h3>Large-Scale Imaging Server — Microtek</h3>
+              <p>Replaced a repurposed Norton Ghost workstation with a purpose-built 1U imaging server and 10G network. Result: endpoint mSATA drives saturated over 1G, an assembly-line workflow, and 2,000+ custom PC images per week.</p>
+              <span class="work-link">read the case study →</span>
+            </div>
+          </a>
+
+          <a class="work-card" href="work/home-health-ios-deployment.html">
+            <div class="work-band"><span class="case-id">CASE_04</span><span class="case-tag">Healthcare Technology</span></div>
+            <div class="work-body">
+              <h3>iOS Fleet Takeover &amp; MDM Buildout</h3>
+              <p>Absorbed a 50-iPad field deployment with no inventory, no MDM, and a Verizon account full of decommissioning 3G devices. Established DEP enrollment, right-sized the carrier account, and enabled HIPAA-compliant EVV within 8 months.</p>
+              <span class="work-link">read the case study →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ CONTACT ════════════ -->
+    <section id="contact">
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <div class="contact-info">
+            <div class="kicker">// contact</div>
+            <h2 class="section-title">Let's talk about<br>what you're <em>solving</em>.</h2>
+            <p>Tell me what you're working on. If it's something I can help with, I'll say so. If it's not, I'll tell you that too and point you somewhere useful. No hard sell.</p>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <span class="cm-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 16s6-4.5 6-9A6 6 0 003 7c0 4.5 6 9 6 9z"/><circle cx="9" cy="7" r="2"/></svg>
+                </span>
+                <span>Colorado — available remote nationwide</span>
               </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email"
-                       placeholder="jane@company.com" required
-                       aria-required="true">
+              <div class="contact-method">
+                <span class="cm-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg>
+                </span>
+                <span>Typically respond within 24 hours, Mon–Fri</span>
+              </div>
+              <div class="contact-method">
+                <span class="cm-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3h7l3 3v9H4z"/><path d="M11 3v3h3M6 9h6M6 12h4"/></svg>
+                </span>
+                <span>Read my thinking at <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">blog.chriszavala.com</a></span>
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="company">Company / Organization</label>
-              <input type="text" id="company" name="company"
-                     placeholder="Optional">
+          <div class="contact-form">
+            <div data-fs-success class="fs-success" role="alert" hidden>
+              <span>&#10003;</span> Got it — I'll be in touch within 24 hours, Mon–Fri.
             </div>
+            <div data-fs-error class="fs-form-error" role="alert"></div>
 
-            <div class="form-group">
-              <label for="service">What are you looking for help with?</label>
-              <select id="service" name="service">
-                <option value="">Select a topic</option>
-                <option>Infrastructure &amp; Networking</option>
-                <option>Workplace Technology Strategy</option>
-                <option>IT Assessment &amp; Roadmapping</option>
-                <option>Fractional IT Leadership</option>
-                <option>EV &amp; Fleet Technology</option>
-                <option>Something else</option>
-              </select>
-            </div>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Jane Smith" required aria-required="true" aria-describedby="name-error" data-fs-field>
+                  <span id="name-error" data-fs-error="name" class="fs-field-error" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="jane@company.com" required aria-required="true" aria-describedby="email-error" data-fs-field>
+                  <span id="email-error" data-fs-error="email" class="fs-field-error" aria-live="polite"></span>
+                </div>
+              </div>
 
-            <div class="form-group">
-              <label for="message">Tell me what you're working on</label>
-              <textarea id="message" name="message"
-                placeholder="A few sentences is plenty. What's the situation and what outcome are you trying to reach?"
-                required aria-required="true"></textarea>
-            </div>
+              <div class="form-group">
+                <label for="company">Company / Organization</label>
+                <input type="text" id="company" name="company" placeholder="Optional" data-fs-field>
+              </div>
 
-            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+              <div class="form-group">
+                <label for="service">What are you looking for help with?</label>
+                <select id="service" name="service" aria-describedby="service-error" data-fs-field>
+                  <option value="">— Select a topic —</option>
+                  <option>Infrastructure &amp; Networking</option>
+                  <option>Workplace Technology Strategy</option>
+                  <option>IT Assessment &amp; Roadmapping</option>
+                  <option>Fractional IT Leadership</option>
+                  <option>EV &amp; Fleet Technology</option>
+                  <option>Something else</option>
+                </select>
+                <span id="service-error" data-fs-error="service" class="fs-field-error" aria-live="polite"></span>
+              </div>
 
-          </form>
+              <div class="form-group">
+                <label for="message">Tell me what you're working on</label>
+                <textarea id="message" name="message" placeholder="A few sentences is plenty — what's the situation and what outcome are you trying to reach?" required aria-required="true" aria-describedby="message-error" data-fs-field></textarea>
+                <span id="message-error" data-fs-error="message" class="fs-field-error" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit" data-fs-submit-btn>Send message</button>
+            </form>
+          </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
+  </main>
 
-  </main><!-- /#main-content -->
-
-  <!-- ════════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════════ -->
+  <!-- ════════════ FOOTER ════════════ -->
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-brand">Zavala <span>Tech</span> Consulting</div>
+        <div class="footer-brand">
+          <span class="brand-mark">z<i>t</i></span>
+          Zavala Tech Consulting
+        </div>
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#portfolio">Work</a>
-          <a href="#contact">Contact</a>
-          <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">Blog</a>
+          <a href="#services">services</a>
+          <a href="#about">about</a>
+          <a href="#work">work</a>
+          <a href="#contact">contact</a>
+          <a href="https://blog.chriszavala.com/" target="_blank" rel="noopener">blog</a>
         </nav>
-        <p class="footer-copy">&copy; <span id="year"></span> Chris Zavala. Colorado.</p>
+        <p class="footer-copy">&copy; <span id="year"></span> Chris Zavala · Colorado</p>
       </div>
     </div>
   </footer>
@@ -402,6 +351,14 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="assets/js/main.js" defer></script>
 
+  <!-- Formspree Ajax SDK -->
+  <script>
+    window.formspree = window.formspree || function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+    formspree('initForm', { formElement: '#contactForm', formId: 'mdayvdyb' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>

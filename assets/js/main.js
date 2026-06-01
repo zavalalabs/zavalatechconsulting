@@ -24,10 +24,10 @@
 
   /* ── Active nav link on scroll ── */
   var sections = document.querySelectorAll('section[id]');
-  var navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+  var navItems = document.querySelectorAll('.nav-links a[href*="#"]');
 
   function onScroll() {
-    var scrollY = window.scrollY + 80;
+    var scrollY = window.scrollY + 90;
     sections.forEach(function (section) {
       if (scrollY >= section.offsetTop &&
           scrollY < section.offsetTop + section.offsetHeight) {
@@ -35,7 +35,7 @@
           a.classList.remove('active');
           a.removeAttribute('aria-current');
         });
-        var active = document.querySelector('.nav-links a[href="#' + section.id + '"]');
+        var active = document.querySelector('.nav-links a[href$="#' + section.id + '"]');
         if (active) {
           active.classList.add('active');
           active.setAttribute('aria-current', 'location');
@@ -51,7 +51,6 @@
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion) {
-    /* Skip animations for users who prefer reduced motion */
     revealEls.forEach(function (el) { el.classList.add('visible'); });
   } else if (revealEls.length && 'IntersectionObserver' in window) {
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -64,7 +63,6 @@
     }, { threshold: 0.12 });
     revealEls.forEach(function (el) { revealObserver.observe(el); });
   } else {
-    /* fallback: just show everything */
     revealEls.forEach(function (el) { el.classList.add('visible'); });
   }
 
